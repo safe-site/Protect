@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protected Page</title>
+  <link rel="stylesheet" type="text/css" href="protect.css">
+</head>
+<body>
+  
+  <div id="overlay"></div>
+  <div id="passwordBox" class="modal">
+    <div class="modal-content">
+      <h2>Enter Password</h2>
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <label for="rememberMeCheckbox">
+        <input type="checkbox" id="rememberMeCheckbox"> Remember Me
+      </label>
+      <button onclick="checkPassword()">Submit</button>
+      <p id="errorMessage" class="error-message"></p>
+    </div>
+  </div>
+
+  <!-- Your page content goes here -->
+
+  <script src="protect.js"></script>
+</body>
+</html>
