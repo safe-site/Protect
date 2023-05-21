@@ -15,7 +15,7 @@ function closeModal() {
 }
 
 function checkPassword() {
-  var password = "your_password"; // Replace with your desired password
+  var password = "1"; // Replace with your desired password
   var passwordInput = document.getElementById("passwordInput");
   var rememberMeCheckbox = document.getElementById("rememberMeCheckbox");
   var errorMessage = document.getElementById("errorMessage");
@@ -34,14 +34,14 @@ function checkPassword() {
     var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
     
     errorMessage.style.display = "block";
-    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by <a href="' + whatsappLink + '"> Shashi.</a> If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
+    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
     }
     }
 
 
 // Function to get the value of a cookie by name
 function getCookie(name) {
-  var cookieName = name + "=";
+  var cookieName = name + "#843321";
   var cookieArray = document.cookie.split(';');
 
   for (var i = 0; i < cookieArray.length; i++) {
@@ -55,3 +55,4 @@ function getCookie(name) {
   }
   return "";
 }
+
