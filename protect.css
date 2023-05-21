@@ -5,7 +5,7 @@ body {
   background-repeat: no-repeat;
 }
 
-#overlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -61,7 +61,7 @@ body {
 }
 
 /* Additional CSS styles */
-input[type="password"],
+.passwordInput,
 button {
   padding: 10px;
   margin-bottom: 10px;
@@ -84,7 +84,7 @@ button:hover {
   opacity: 0.8;
 }
 
-#errorMessage {
+.errorMessage {
   color: black;
   font-size: 16px;
   margin-top: 10px;
