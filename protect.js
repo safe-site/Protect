@@ -4,21 +4,21 @@ window.addEventListener("load", function() {
 });
 
 function openModal() {
-  document.querySelector(".overlay").style.display = "block";
-  document.querySelector(".passwordBox").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("passwordBox").style.display = "block";
 }
 
 function closeModal() {
-  document.querySelector(".overlay").style.display = "none";
-  document.querySelector(".passwordBox").style.display = "none";
-  document.querySelector(".errorMessage").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("passwordBox").style.display = "none";
+  document.getElementById("errorMessage").style.display = "none";
 }
 
 function checkPassword() {
   var password = "#843321"; // Replace with your desired password
-  var passwordInput = document.querySelector(".passwordInput");
-  var rememberMeCheckbox = document.querySelector("#rememberMeCheckbox");
-  var errorMessage = document.querySelector(".errorMessage");
+  var passwordInput = document.getElementById("passwordInput");
+  var rememberMeCheckbox = document.getElementById("rememberMeCheckbox");
+  var errorMessage = document.getElementById("errorMessage");
 
   if (passwordInput.value === password) {
     if (rememberMeCheckbox.checked) {
@@ -31,13 +31,14 @@ function checkPassword() {
     closeModal();
   } else {
     var websiteURL = window.location.href; // Get the current website URL
-    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
+    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.: " + websiteURL);
     var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
     
     errorMessage.style.display = "block";
-    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
-  }
-}
+    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
+    }
+    }
+
 
 // Function to get the value of a cookie by name
 function getCookie(name) {
