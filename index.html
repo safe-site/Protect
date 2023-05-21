@@ -2,24 +2,26 @@
 <html>
 <head>
   <title>Protected Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" type="text/css" href="protect.css">
 </head>
 <body>
   
-  <div class="overlay"></div>
-  <div class="modal passwordBox">
+  <div id="overlay"></div>
+  <div id="passwordBox" class="modal">
     <div class="modal-content">
       <h2>Enter Password</h2>
-      <input type="password" class="passwordInput" placeholder="Password" />
+      <input type="password" id="passwordInput" placeholder="Password" />
       <label for="rememberMeCheckbox">
         <input type="checkbox" id="rememberMeCheckbox"> Remember Me
       </label>
       <button onclick="checkPassword()">Submit</button>
-      <p class="errorMessage"></p>
-      <div class="watermark">
-        Powered by <a href="https://9508914855.github.io/link-tree/">Shashi Kumar</a>
-      </div>
+      <p id="errorMessage" class="error-message"></p>
+<div class="watermark">
+    Powered by <a href="https://9508914855.github.io/link-tree/">Shashi Kumar</a>
+    </div>
     </div>
   </div>
 
