@@ -15,7 +15,7 @@ function closeModal() {
 }
 
 function checkPassword() {
-  var password = "1"; // Replace with your desired password
+  var password = "#843321"; // Replace with your desired password
   var passwordInput = document.getElementById("passwordInput");
   var rememberMeCheckbox = document.getElementById("rememberMeCheckbox");
   var errorMessage = document.getElementById("errorMessage");
