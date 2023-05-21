@@ -29,8 +29,9 @@ function checkPassword() {
     }
 
     closeModal();
-    } else {
-    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.");
+  } else {
+    var websiteURL = window.location.href; // Get the current website URL
+    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access the protected website: " + websiteURL);
     var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
     
     errorMessage.style.display = "block";
