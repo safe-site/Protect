@@ -58,10 +58,7 @@ function getCookie(name) {
 }
 
 
- // Show the web page content
-    document.body.style.background = "none";
-    document.body.style.overflow = "auto";
-  } else {
+
 
 
 
