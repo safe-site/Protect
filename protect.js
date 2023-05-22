@@ -58,7 +58,14 @@ function getCookie(name) {
 }
 
 
+ // Show the web page content
+    document.body.style.background = "none";
+    document.body.style.overflow = "auto";
+  } else {
 
+
+
+//
 function checkPassword() {
   var password = "#843321"; // Replace with your desired password
   var passwordInput = document.getElementById("passwordInput");
@@ -77,3 +84,4 @@ function checkPassword() {
   }
 }
 
+//
