@@ -65,7 +65,7 @@ function getCookie(name) {
 
 
 
-//
+/*
 function checkPassword() {
   var password = "#843321"; // Replace with your desired password
   var passwordInput = document.getElementById("passwordInput");
@@ -84,4 +84,4 @@ function checkPassword() {
   }
 }
 
-//
+*\
