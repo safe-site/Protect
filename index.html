@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Protected Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="protect.css">
+  <title>Password Protection</title>
+  <link rel="stylesheet" type="text/css" href="password-protect.css">
 </head>
 <body>
+
+  <div id="overlay"></div>
   <div id="passwordBox" class="modal">
     <div class="modal-content">
       <h2>Enter Password</h2>
       <input type="password" id="passwordInput" placeholder="Password" />
       <button onclick="checkPassword()">Submit</button>
       <p id="errorMessage" class="error-message"></p>
-      <div class="watermark">
-        Powered by <a href="https://9508914855.github.io/link-tree/">Shashi Kumar</a>
-      </div>
     </div>
   </div>
 
-  <script src="protect.js"></script>
+  <script src="password-protect.js"></script>
 </body>
 </html>
