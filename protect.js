@@ -43,11 +43,11 @@ function checkPassword() {
     window.parent.postMessage({ passwordCorrect: true }, '*');
   } else {
     var websiteURL = window.location.href; // Get the current website URL
-    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.: " + websiteURL);
-    var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
+    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
+    var whatsappLink = 'https://wa.me/919508914855?text=' + whatsappMessage;
 
     errorMessage.style.display = "block";
-    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
+    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
     
     // Send a message to the parent window indicating the password is incorrect
     window.parent.postMessage({ passwordCorrect: false }, '*');
