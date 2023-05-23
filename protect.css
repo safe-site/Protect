@@ -1,108 +1,80 @@
-body { 
-   background-color: red; 
-   background-size: cover; 
-   background-position: center; 
-   background-repeat: no-repeat; 
- } 
-  
- #overlay { 
-   position: fixed; 
-   top: 0; 
-   left: 0; 
-   width: 100%; 
-   height: 100%; 
-   background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */ 
-   z-index: 1; 
- } 
-  
- .modal { 
-   display: none; 
-   position: fixed; 
-   z-index: 2; 
-   left: 0; 
-   top: 0; 
-   width: 100%; 
-   height: 100%; 
-   overflow: auto; 
-   background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */ 
- } 
-  
- .modal-content { 
-   background-color: white; 
-   margin: 10% auto; 
-   padding: 20px; 
-   border: 1px solid #888; 
-   width: 300px; 
-   animation-name: fade-in; 
-   animation-duration: 0.5s; 
- } 
-  
- @keyframes fade-in { 
-   from { opacity: 0; } 
-   to { opacity: 1; } 
- } 
-  
- .close { 
-   color: #aaa; 
-   float: right; 
-   font-size: 28px; 
-   font-weight: bold; 
-   cursor: pointer; 
- } 
-  
- .close:hover { 
-   color: black; 
- } 
-  
- .error-message { 
-   color: red; 
-   margin-top: 10px; 
-   display: none; 
- } 
-  
- /* Additional CSS styles */ 
- input[type="password"], 
- button { 
-   padding: 10px; 
-   margin-bottom: 10px; 
-   width: 100%; 
-   box-sizing: border-box; 
- } 
-  
- input[type="checkbox"] { 
-   margin-bottom: 10px; 
- } 
-  
- button { 
-   background-color: #4CAF50; 
-   color: white; 
-   border: none; 
-   cursor: pointer; 
- } 
-  
- button:hover { 
-   opacity: 0.8; 
- } 
-  
- #errorMessage { 
-   color: black; 
-   font-size: 16px; 
-   margin-top: 10px; 
-   font-style: italic; 
-   text-align: justify; 
-   text-align-last: justify; 
- } 
-  
- a { 
-   color: blue; 
-   text-decoration: underline; 
- } 
-  
- a:hover { 
-   color: darkblue; 
-   text-decoration: none; 
- } 
-  
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+input[type="password"],
+button {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#errorMessage {
+  color: black;
+  font-size: 16px;
+  margin-top: 10px;
+  font-style: italic;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: darkblue;
+  text-decoration: none;
+}
+
  /* Existing CSS styles */ 
   
  .modal-content { 
