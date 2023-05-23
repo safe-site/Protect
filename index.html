@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Password Protection</title>
+  <title>Protected Page</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" type="text/css" href="protect.css">
 </head>
 <body>
-
+  
   <div id="overlay"></div>
   <div id="passwordBox" class="modal">
     <div class="modal-content">
       <h2>Enter Password</h2>
       <input type="password" id="passwordInput" placeholder="Password" />
+      <label for="rememberMeCheckbox">
+        <input type="checkbox" id="rememberMeCheckbox"> Remember Me
+      </label>
       <button onclick="checkPassword()">Submit</button>
       <p id="errorMessage" class="error-message"></p>
+<div class="watermark">
+    Powered by <a href="https://9508914855.github.io/link-tree/">Shashi Kumar</a>
+    </div>
     </div>
   </div>
+
+  <!-- Your page content goes here -->
 
   <script src="protect.js"></script>
 </body>
 </html>
+
+
+  <!-- add these codes to protect your site
+
+css
+
+    iframe { 
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+   width: 100%; 
+   height: 100%; 
+   z-index: 9999; /* Adjust the value as needed */ 
+ } 
+
+
+html just below <body>
+
+
+<iframe src="https://raw.githack.com/9508914855/Protect/main/index.html" frameborder="0"></iframe>
+
+
+ -->
