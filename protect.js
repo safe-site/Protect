@@ -46,6 +46,10 @@ function checkPassword() {
     var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.: " + websiteURL);
     var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
 
+/ Open the external link in a new tab
+  window.open(whatsappLink, "_blank");
+}
+
     errorMessage.style.display = "block";
     errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '" target="_blank">TO GET PASSWORD</a>';
     
