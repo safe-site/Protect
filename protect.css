@@ -84,21 +84,37 @@ button:hover {
   opacity: 0.8;
 }
 
-#errorMessage {
-  color: black;
-  font-size: 16px;
-  margin-top: 10px;
+##errorMessage {
   font-style: italic;
   text-align: justify;
   text-align-last: justify;
+  font-size: 20px;
+  font-weight:;
+  margin: 0.5em 0;
+  background: linear-gradient(45deg, red, green, yelko, blue, black);
+  color: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: animateH1 2s infinite;
+  font-family: 'Heebo', sans-serif;
 }
 
-a {
+@keyframes animateH1 {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+#errorMessage a {
   color: blue;
   text-decoration: underline;
 }
 
-a:hover {
+#errorMessage a:hover {
   color: darkblue;
   text-decoration: none;
 }
