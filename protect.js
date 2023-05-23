@@ -4,6 +4,9 @@ window.addEventListener("load", function() {
 });
 
 function openModal() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("passwordBox").style.display = "block";
+
   // Check if a remembered password exists
   var rememberedPassword = getCookie("rememberedPassword");
   if (rememberedPassword) {
@@ -15,7 +18,9 @@ function openModal() {
 }
 
 function closeModal() {
-  // Code to close the modal
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("passwordBox").style.display = "none";
+  document.getElementById("errorMessage").style.display = "none";
 }
 
 function checkPassword() {
@@ -39,7 +44,7 @@ function checkPassword() {
     // Use the websiteURL as needed
 
     // Send a message to the parent window indicating the password is correct
-    window.parent.postMessage({ passwordCorrect: true, iframeURL: websiteURL }, "*");
+    window.parent.postMessage({ passwordCorrect: true, currentURL: websiteURL }, "*");
   } else {
     var websiteURL = window.location.href; // Get the current website URL
     var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
