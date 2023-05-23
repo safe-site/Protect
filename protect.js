@@ -48,9 +48,9 @@ function checkPassword() {
 
     errorMessage.style.display = "block";
     errorMessage.innerHTML =
-      'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' +
+      'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> To Get Password 👉 <a href="' +
       whatsappLink +
-      '" target="_blank">TO GET PASSWORD</a>';
+      '" target="_blank">CLICK HERE</a>';
 
     // Send a message to the parent window indicating the password is incorrect
     window.parent.postMessage({ passwordCorrect: false }, "*");
