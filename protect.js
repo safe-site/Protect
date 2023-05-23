@@ -15,9 +15,7 @@ function openModal() {
 }
 
 function closeModal() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("passwordBox").style.display = "none";
-  document.getElementById("errorMessage").style.display = "none";
+  // Code to close the modal
 }
 
 function checkPassword() {
