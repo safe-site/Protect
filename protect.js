@@ -4,9 +4,6 @@ window.addEventListener("load", function() {
 });
 
 function openModal() {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("passwordBox").style.display = "block";
-
   // Check if a remembered password exists
   var rememberedPassword = getCookie("rememberedPassword");
   if (rememberedPassword) {
@@ -39,23 +36,20 @@ function checkPassword() {
 
     closeModal();
 
+    // Get the URL of the current page
+    var websiteURL = window.location.href;
+    // Use the websiteURL as needed
+
     // Send a message to the parent window indicating the password is correct
-    window.parent.postMessage({ passwordCorrect: true }, "*");
+    window.parent.postMessage({ passwordCorrect: true, iframeURL: websiteURL }, "*");
   } else {
-    var websiteURL = window.location.href; // Get the current iframe URL
-    window.parent.postMessage({ iframeURL: websiteURL }, "*"); // Send the iframe URL to the parent window
-
-    var whatsappMessage = encodeURIComponent(
-      "Hello Shashi, I need the password to access your website.: " + websiteURL
-    );
+    var websiteURL = window.location.href; // Get the current website URL
+    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
     var whatsappLink = "https://wa.me/+919508914855?text=" + whatsappMessage;
-
-    // Open the external link in a new tab
-    window.open(whatsappLink, "_blank");
 
     errorMessage.style.display = "block";
     errorMessage.innerHTML =
-      'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' +
+      'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' +
       whatsappLink +
       '" target="_blank">TO GET PASSWORD</a>';
 
