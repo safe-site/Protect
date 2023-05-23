@@ -39,14 +39,14 @@ function checkPassword() {
 
     closeModal();
 
-    // Get the URL of the current page
-    var websiteURL = window.location.href;
+    // Get the URL of the parent site
+    var websiteURL = window.parent.location.href;
     // Use the websiteURL as needed
 
     // Send a message to the parent window indicating the password is correct
     window.parent.postMessage({ passwordCorrect: true, currentURL: websiteURL }, "*");
   } else {
-    var websiteURL = window.location.href; // Get the current website URL
+    var websiteURL = window.parent.location.href; // Get the URL of the parent site
     var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
     var whatsappLink = "https://wa.me/+919508914855?text=" + whatsappMessage;
 
