@@ -6,6 +6,15 @@ window.addEventListener("load", function() {
 function openModal() {
   document.getElementById("overlay").style.display = "block";
   document.getElementById("passwordBox").style.display = "block";
+  
+  // Check if a remembered password exists
+  var rememberedPassword = getCookie("rememberedPassword");
+  if (rememberedPassword) {
+    // Fill the password input field with the remembered password
+    document.getElementById("passwordInput").value = rememberedPassword;
+    // Submit the form automatically
+    checkPassword();
+  }
 }
 
 function closeModal() {
@@ -29,16 +38,21 @@ function checkPassword() {
     }
 
     closeModal();
+    
+    // Send a message to the parent window indicating the password is correct
+    window.parent.postMessage({ passwordCorrect: true }, '*');
   } else {
     var websiteURL = window.location.href; // Get the current website URL
     var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.: " + websiteURL);
     var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
-    
+
     errorMessage.style.display = "block";
     errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
-    }
-    }
-
+    
+    // Send a message to the parent window indicating the password is incorrect
+    window.parent.postMessage({ passwordCorrect: false }, '*');
+  }
+}
 
 // Function to get the value of a cookie by name
 function getCookie(name) {
@@ -56,23 +70,3 @@ function getCookie(name) {
   }
   return "";
 }
-
-
-
-
-
-function checkPassword() {
-  var password = "#843321"; // Replace with your desired password
-  var passwordInput = document.getElementById("passwordInput");
-
-  if (passwordInput.value === password) {
-    // Send a message to the parent window indicating the password is correct
-    window.parent.postMessage({ passwordCorrect: true }, '*');
-  } else {
-    // Send a message to the parent window indicating the password is incorrect
-    window.parent.postMessage({ passwordCorrect: false }, '*');
-  }
-}
-
-
-
