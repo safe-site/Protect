@@ -62,23 +62,23 @@ function getCookie(name) {
 
 
 
-/*
 function checkPassword() {
   var password = "#843321"; // Replace with your desired password
   var passwordInput = document.getElementById("passwordInput");
-  
+
   if (passwordInput.value === password) {
     // Remove the password-related elements
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("passwordBox").style.display = "none";
-    document.getElementById("errorMessage").style.display = "none";
+    var overlay = document.getElementById("overlay");
+    var passwordBox = document.getElementById("passwordBox");
 
-    // Show the web page content
-    document.body.style.background = "none";
-    document.body.style.overflow = "auto";
+    overlay.style.display = "none";
+    passwordBox.style.display = "none";
+
+    // Enable scrolling and allow user interaction within the iframe
+    var iframe = window.parent.document.getElementById("myIframe");
+    iframe.style.pointerEvents = "auto";
+    iframe.style.overflow = "auto";
   } else {
     // Display error message or take appropriate action for incorrect password
   }
 }
-
-*/
