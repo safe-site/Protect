@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
 function openModal() {
   document.getElementById("overlay").style.display = "block";
   document.getElementById("passwordBox").style.display = "block";
-  
+
   // Check if a remembered password exists
   var rememberedPassword = getCookie("rememberedPassword");
   if (rememberedPassword) {
@@ -38,34 +38,33 @@ function checkPassword() {
     }
 
     closeModal();
-    
+
     // Send a message to the parent window indicating the password is correct
-    window.parent.postMessage({ passwordCorrect: true }, '*');
+    window.parent.postMessage({ passwordCorrect: true }, "*");
   } else {
     var websiteURL = window.location.href; // Get the current website URL
-    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.: " + websiteURL);
-    var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
-
-/ Open the external link in a new tab
-  window.open(whatsappLink, "_blank");
-}
+    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
+    var whatsappLink = "https://wa.me/+919508914855?text=" + whatsappMessage;
 
     errorMessage.style.display = "block";
-    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '" target="_blank">TO GET PASSWORD</a>';
-    
+    errorMessage.innerHTML =
+      'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' +
+      whatsappLink +
+      '" target="_blank">TO GET PASSWORD</a>';
+
     // Send a message to the parent window indicating the password is incorrect
-    window.parent.postMessage({ passwordCorrect: false }, '*');
+    window.parent.postMessage({ passwordCorrect: false }, "*");
   }
 }
 
 // Function to get the value of a cookie by name
 function getCookie(name) {
   var cookieName = name + "#843321";
-  var cookieArray = document.cookie.split(';');
+  var cookieArray = document.cookie.split(";");
 
   for (var i = 0; i < cookieArray.length; i++) {
     var cookie = cookieArray[i];
-    while (cookie.charAt(0) === ' ') {
+    while (cookie.charAt(0) === " ") {
       cookie = cookie.substring(1);
     }
     if (cookie.indexOf(cookieName) === 0) {
