@@ -17,28 +17,29 @@ function closeModal() {
 function checkPassword() {
   var password = "#843321"; // Replace with your desired password
   var passwordInput = document.getElementById("passwordInput");
-  var rememberMeCheckbox = document.getElementById("rememberMeCheckbox");
-  var errorMessage = document.getElementById("errorMessage");
 
   if (passwordInput.value === password) {
-    if (rememberMeCheckbox.checked) {
-      // Set cookie to remember password for 7 days
-      var expiryDate = new Date();
-      expiryDate.setDate(expiryDate.getDate() + 7);
-      document.cookie = "rememberedPassword=" + password + "; expires=" + expiryDate.toUTCString();
-    }
+    // Remove the password-related elements
+    var overlay = document.getElementById("overlay");
+    var passwordBox = document.getElementById("passwordBox");
 
-    closeModal();
+    overlay.style.display = "none";
+    passwordBox.style.display = "none";
+
+    // Enable scrolling and allow user interaction within the iframe
+    var iframe = window.parent.document.getElementById("myIframe");
+    iframe.style.pointerEvents = "auto";
+    iframe.style.overflow = "auto";
   } else {
     var websiteURL = window.location.href; // Get the current website URL
-    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website.: " + websiteURL);
+    var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
     var whatsappLink = 'https://wa.me/+919508914855?text=' + whatsappMessage;
-    
-    errorMessage.style.display = "block";
-    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi.If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
-    }
-    }
 
+    var errorMessage = document.getElementById("errorMessage");
+    errorMessage.style.display = "block";
+    errorMessage.innerHTML = 'Apologies, the password you entered is incorrect. This website is password protected and can only be accessed by Shashi. If you wish to use this tool, please reach out to Shashi and obtain the password. Thank you for your understanding. <br> Click here 👉 <a href="' + whatsappLink + '">TO GET PASSWORD</a>';
+  }
+}
 
 // Function to get the value of a cookie by name
 function getCookie(name) {
@@ -55,30 +56,4 @@ function getCookie(name) {
     }
   }
   return "";
-}
-
-
-
-
-
-
-function checkPassword() {
-  var password = "#843321"; // Replace with your desired password
-  var passwordInput = document.getElementById("passwordInput");
-
-  if (passwordInput.value === password) {
-    // Remove the password-related elements
-    var overlay = document.getElementById("overlay");
-    var passwordBox = document.getElementById("passwordBox");
-
-    overlay.style.display = "none";
-    passwordBox.style.display = "none";
-
-    // Enable scrolling and allow user interaction within the iframe
-    var iframe = window.parent.document.getElementById("myIframe");
-    iframe.style.pointerEvents = "auto";
-    iframe.style.overflow = "auto";
-  } else {
-    // Display error message or take appropriate action for incorrect password
-  }
 }
