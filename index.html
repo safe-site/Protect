@@ -27,6 +27,16 @@
 
   <!-- Your page content goes here -->
 
+<script>
+    // Listen for message from the parent window
+    window.addEventListener("message", function (event) {
+      if (event.data.iframeURL) {
+        var websiteURL = event.data.iframeURL; // Get the URL of the main page
+        // Use the websiteURL as needed
+      }
+    });
+  </script>
+
   <script src="protect.js"></script>
 </body>
 </html>
