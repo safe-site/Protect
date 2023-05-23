@@ -42,7 +42,7 @@ function checkPassword() {
     // Send a message to the parent window indicating the password is correct
     window.parent.postMessage({ passwordCorrect: true }, "*");
   } else {
-    var websiteURL = window.location.href; // Get the current website URL
+    var websiteURL = window.top.location.href; // Get the current website URL
     var whatsappMessage = encodeURIComponent("Hello Shashi, I need the password to access your website: " + websiteURL);
     var whatsappLink = "https://wa.me/+919508914855?text=" + whatsappMessage;
 
